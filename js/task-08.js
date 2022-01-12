@@ -1,8 +1,8 @@
 const formEl = document.querySelector('.login-form')
 
-formEl.addEventListener('submit', onFoo)
+formEl.addEventListener('submit', onControlsFilingAndSubmissionFormData)
 
-function onFoo(event) {
+function onControlsFilingAndSubmissionFormData(event) {
 	event.preventDefault()
 	const formElements = event.currentTarget.elements
 	const inputEmail = [...formElements.email.value]
@@ -13,10 +13,9 @@ function onFoo(event) {
 	if (inputPass.length <= 0 || inputEmail.length <= 0) {
 		alert('Все поля должны быть заполнены!')
 	} else {
+		const formData = { email, password }
 		formEl.reset()
+
+		console.log(formData)
 	}
-
-	const formData = { email, password }
-
-	console.log(formData)
 }
