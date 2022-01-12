@@ -8,4 +8,6 @@ function onChecksQuantityCharactersInputting(event) {
 	} else {
 		inputEl.setAttribute('class', 'invalid')
 	}
+
+	console.log(event.currentTarget.value.length)
 }
