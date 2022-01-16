@@ -7,12 +7,30 @@ const ingredients = [
 	'Condiments',
 ]
 
-const listEl = document.querySelector('ul#ingredients')
+const listEl = document.querySelector('#ingredients')
 
-for (let i = 0; i < ingredients.length; i += 1) {
+const makeListItems = ingredients.map(function (ingredient) {
+	console.log(ingredient)
+
 	const itemEl = document.createElement('li')
-	itemEl.textContent = ingredients[i]
-	itemEl.classList.add('item')
-	listEl.append(itemEl)
-	console.log(itemEl.textContent)
-}
+	itemEl.textContent = ingredient
+	itemEl.classList = 'item'
+
+	return itemEl
+})
+
+listEl.append(...makeListItems)
+
+// const makeListItems = ingredients
+// 	.map(function (ingredient) {
+// 		console.log(ingredient)
+
+// 		return `
+// 			<li class='item'>
+// 		<p>${ingredient}</p>
+// 			</li>
+// 			`
+// 	})
+// 	.join('')
+
+// listEl.insertAdjacentHTML('beforeend', makeListItems)

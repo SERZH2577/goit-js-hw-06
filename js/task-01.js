@@ -4,11 +4,11 @@ const listItemEl = document.querySelectorAll('.item ul')
 
 console.log(`Number of categories: ${itemEl.length}`)
 
-console.log(`Category: ${titleEl[0].textContent}`)
-console.log(`Elements: ${listItemEl[0].children.length}`)
-
-console.log(`Category: ${titleEl[1].textContent}`)
-console.log(`Elements: ${listItemEl[1].children.length}`)
-
-console.log(`Category: ${titleEl[2].textContent}`)
-console.log(`Elements: ${listItemEl[2].children.length}`)
+titleEl.forEach((element, index) => {
+	console.log(`Category: ${element.textContent}`)
+	listItemEl.forEach((element, i) => {
+		if (index === i) {
+			console.log(`Elements: ${element.children.length}`)
+		}
+	})
+})
